@@ -1,6 +1,7 @@
 import { Header } from "../components/header/header";
 import { Footer} from "../components/footer/footer";
 import { Breadcrumbs } from "../components/breadcrumbs/breadcrumbs";
+import { Button } from "../components/button/button";
 
 import Main from "../pages/main";
 
@@ -9,7 +10,8 @@ function App() {
     <div>
       <Header>Header</Header>
       <Breadcrumbs/>
-      <Main />
+      <Button/>
+      <Main/>
       <Footer/>
     </div>
   );
