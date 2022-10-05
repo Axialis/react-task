@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import GitLogo from '../../assets/vector/gitlogo.svg'
+import tw from 'twin.macro'
 
 const FooterStyle = styled.footer.attrs(props => ({
   className: `  
@@ -18,11 +19,9 @@ const FooterStyle = styled.footer.attrs(props => ({
   `
 }))``;
 
-const Logo = styled.img.attrs({
-  className: `
-  w-8
-  `
-})``;
+const Logo = styled.img`
+${tw`w-8 cursor-pointer hover:animate-spin`}
+`
 
 const Text = styled.span.attrs({
   className: `text-gray-500`
@@ -31,8 +30,8 @@ const Text = styled.span.attrs({
 export const Footer = (props: any) => {
   return (
     <FooterStyle {...props}>
-    <Text>2022</Text>
-      <Logo src={GitLogo}/>
+      <Text>Aliaksand Semiankou</Text>
+      <Logo src={GitLogo} onClick={() => window.open("https://github.com/axialis", "_blank")}/>
     </FooterStyle>
   )
 }

@@ -1,8 +1,10 @@
 import styled from "styled-components";
-
+import tw from 'twin.macro'
 
 const BreadcrumbsStyle = styled.nav.attrs({
-  className: `  
+  className: `
+  flex
+  justify-center
   text-black
   font-bold
   my-4
@@ -25,10 +27,11 @@ const Li = styled.ol.attrs({
 })``;
 
 const Link = styled.span<{ active: string }>`
-  cursor: ${props => props.active === "true" ? "" : "pointer"};
-  color: ${props => props.active === "true" ? "lightgray" : "black"};
-  pointer-events: ${props => props.active === "true" ? "none" : "auto"};
-  user-select: none;
+  ${props => props.active === "true" ? tw`cursor-auto` : tw`cursor-pointer`};
+  ${props => props.active === "true" ? tw`text-gray-200` : tw`text-gray-900`}
+  ${props => props.active === "true" ? tw`pointer-events-none` : tw`pointer-events-auto`}
+  ${props => props.active === "true" ? "" : tw`hover:text-red-900`}
+  ${tw`select-none`}
 `;
 
 const Svg = styled.svg.attrs({
