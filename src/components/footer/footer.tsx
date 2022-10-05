@@ -23,8 +23,9 @@ ${tw`text-gray-500`}
 export const Footer = (props: any) => {
   return (
     <FooterStyle {...props}>
-      <Text>Aliaksand Semiankou</Text>
+      <Text>Aliaksand</Text>
       <Logo src={GitLogo} onClick={() => window.open("https://github.com/axialis", "_blank")} />
+      <Text>Semiankou</Text>
     </FooterStyle>
   )
 }
