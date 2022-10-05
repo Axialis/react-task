@@ -24,26 +24,6 @@ function Main() {
                 <Button title='Change SignUp' />
                 <Button title='Complete' />
             </PersonalInfo>
-            <PersonalInfo>
-                <Button title='Change SignUp' />
-                <Button title='Complete' />
-            </PersonalInfo>
-            <PersonalInfo>
-                <Button title='Change SignUp' />
-                <Button title='Complete' />
-            </PersonalInfo>
-            <PersonalInfo>
-                <Button title='Change SignUp' />
-                <Button title='Complete' />
-            </PersonalInfo>
-            <PersonalInfo>
-                <Button title='Change SignUp' />
-                <Button title='Complete' />
-            </PersonalInfo>
-            <PersonalInfo>
-                <Button title='Change SignUp' />
-                <Button title='Complete' />
-            </PersonalInfo>
         </MainStyle>
     )
 }

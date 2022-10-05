@@ -3,9 +3,10 @@ import tw from 'twin.macro'
 import { ContainerProps } from "../../types/types"
 import { Input } from "../../components/input/input"
 
-const PersonalInfoStyle = styled.div`
+const PersonalInfoStyle = styled.div.attrs({
+    className: `min-h-[calc(50vh)]`
+})`
 ${tw`flex
-h-3/5
 flex-col
 bg-gray-50
 shadow-2xl
