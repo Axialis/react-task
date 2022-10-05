@@ -4,16 +4,16 @@ import tw from 'twin.macro'
 
 const HeaderStyle = styled.footer`
 ${tw`bg-white
-shadow-md
-h-20
-flex
-flex-row
-justify-start
-px-10
-items-center
-font-sans
-text-xl
-gap-x-6
+    shadow-md
+    h-20
+    flex
+    flex-row
+    justify-start
+    px-10
+    items-center
+    font-sans
+    text-xl
+    gap-x-6
 `}`
 
 const Text = styled.span`

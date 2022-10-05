@@ -1,13 +1,15 @@
 import styled from "styled-components";
+import { Button } from "../components/button/button";
 
 const MainStyle = styled.main.attrs({
-    className: `h-[calc(100vh_-_10rem_-_3.5rem)]`
+className: `grow`
 })``;
 
 function Main() {
     return (
         <MainStyle>
-            MAIN
+        <Button title='PREV'/>
+        <Button title='NEXT'/>
         </MainStyle>
     )
 }

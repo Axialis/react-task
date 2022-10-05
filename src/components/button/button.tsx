@@ -8,10 +8,11 @@ ${tw`
     text-blue-500
     font-semibold
     hover:text-white
+    h-10
     w-20
     py-1
     px-4
-    border
+    border-2
     border-blue-500
     hover:border-transparent
     rounded
@@ -25,8 +26,8 @@ ${tw`hover:text-white`}
 
 export const Button = (props: any) => {
   return (
-    <ButtonStyle {...props}>
-      <Text>Next</Text>     
+    <ButtonStyle>
+      <Text>{props.title}</Text>      
     </ButtonStyle>
   )
 }
