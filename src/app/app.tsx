@@ -1,15 +1,16 @@
-import Footer from "../components/footer/footer";
-import Header from "../components/header/header";
+import { Header } from "../components/header/header";
+import { Footer} from "../components/footer/footer";
+import { Breadcrumbs } from "../components/breadcrumbs/breadcrumbs";
+
 import Main from "../pages/main";
-import Breadcrumbs from "../components/breadcrumbs/breadcrumbs";
 
 function App() {
   return (
     <div>
-      <Header />
-      {/* <Breadcrumbs /> */}
+      <Header>Header</Header>
+      <Breadcrumbs/>
       <Main />
-      <Footer />
+      <Footer/>
     </div>
   );
 }

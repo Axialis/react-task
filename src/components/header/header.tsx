@@ -1,14 +1,31 @@
 import styled from "styled-components";
-const HeaderStyle = styled.header.attrs({
-  className: `bg-sky-500 h-20 flex justify-center items-center font-sans	font-family: Roboto text-3xl`
+
+const HeaderStyle = styled.footer.attrs(props => ({
+  className: `  
+  bg-white
+  rounded-b-lg
+  shadow-md
+  h-20
+  flex
+  flex-row
+  justify-center
+  items-center
+  font-sans
+  font-family: Roboto
+  text-xl
+  gap-x-10
+  ${Object.keys(props).join(' ')}
+  `
+}))``;
+
+const Text = styled.span.attrs({
+  className: `text-gray-500`
 })``;
 
-function Header() {
+export const Header = (props: any) => {
   return (
-    <HeaderStyle>
-     Aliaksandr Semiankou
+    <HeaderStyle {...props}>
+    <Text>HEADER</Text>
     </HeaderStyle>
-  );
+  )
 }
-
-export default Header;
