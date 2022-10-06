@@ -5,8 +5,8 @@ const InputStyle = styled.form.attrs({
     className: "flex flex-col justify-center items-start w-full",
 })`
     &
-    {input {${tw`flex bg-gray-50 border text-gray-900 text-sm rounded-lg w-full p-2.5 outline-none`}}
-    {input:focus {${tw` border-blue-600`}}
+    {input {${tw`flex bg-gray-50 border-2 text-gray-900 text-sm rounded-lg w-full p-2.5 outline-none`}}
+    {input:focus {${tw` border-gray-900`}}
     {label {${tw`text-sm font-medium text-gray-900`}}}
     `
 
