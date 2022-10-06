@@ -12,7 +12,7 @@ const RadioButtonStyle = styled.form.attrs({
     `
 
 const GroupStyle = styled.div`
-${tw`flex`}
+${tw`flex  gap-2`}
 `
 const GroupLaberStyle = styled.div`
 ${tw`flex flex-col justify-around w-full text-sm font-medium text-gray-900`}

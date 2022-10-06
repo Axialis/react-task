@@ -1,5 +1,8 @@
 import styled from "styled-components";
 import tw from 'twin.macro'
+import store from "../../store";
+import { pressButton } from "../../store/actionCreator/action-creator";
+
 
 const ButtonStyle = styled.button`
 ${tw`
@@ -15,7 +18,7 @@ ${tw`
     border-blue-500
     rounded
 `
-}
+  }
 `
 
 const Text = styled.span`
@@ -23,9 +26,11 @@ ${tw`hover:text-blue-500`}
 `
 
 export const Button = (props: any) => {
+
   return (
-    <ButtonStyle>
-      <Text>{props.title}</Text>      
+    <ButtonStyle onClick={() => store.dispatch(pressButton(props.id))}>
+      <Text>{props.title}</Text>
     </ButtonStyle>
   )
 }
+

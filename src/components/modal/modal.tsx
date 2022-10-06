@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import tw from 'twin.macro'
-import { Button } from "../button/button";
+import { ContainerProps } from "../../types/types"
+// import { Button } from "../button/button";
 
 const ModalStyle = styled.div`
 ${tw` fixed 
@@ -27,11 +28,11 @@ shadow-2xl
 border-2 
 `}`
 
-function Modal() {
+function Modal(props: ContainerProps) {
     return (
         <ModalStyle>
             <DialodStyle>
-                <Button title='OK'/>
+                {props.children}
             </DialodStyle>
         </ModalStyle>
     )

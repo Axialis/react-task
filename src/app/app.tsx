@@ -3,7 +3,6 @@ import tw from 'twin.macro'
 import { Header } from "../components/header/header";
 import { Footer } from "../components/footer/footer";
 import { Breadcrumbs } from "../components/breadcrumbs/breadcrumbs";
-// import Modal from "../components/modal/modal";
 import Main from "../pages/main";
 
 const AppStyle = styled.div`
@@ -17,9 +16,7 @@ function App() {
         <Breadcrumbs />
       </>
         <Main />
-        {/* <Modal/> */}
         <Footer />
-
     </AppStyle>
   );
 }

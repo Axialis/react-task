@@ -3,17 +3,19 @@ import tw from 'twin.macro'
 import { ContainerProps } from "../../types/types"
 import { Input } from "../../components/input/input"
 
-const SingUpStyle = styled.div`
+const SingUpStyle = styled.div.attrs({
+    className: `min-h-[calc(70vh)] min-w-[calc(320px)]`
+})`
 ${tw`flex
 flex-col
 bg-gray-50
 shadow-2xl
 rounded-lg
 w-3/6
-h-5/6
 max-w-screen-md
 justify-between
 items-center
+py-2
 `}
 `
 

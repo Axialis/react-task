@@ -19,7 +19,7 @@ const GroupLaberStyle = styled.div`
 ${tw`flex flex-col justify-around w-full text-sm font-medium text-gray-900`}
 `
 const GroupStyle = styled.div`
-${tw`flex w-1/2`}
+${tw`flex w-1/2 gap-2`}
 `
 const listItem = hobbyList.map((el: string, index: number) => {
     return (
