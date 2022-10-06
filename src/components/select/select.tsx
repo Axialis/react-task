@@ -20,7 +20,7 @@ ${tw`flex flex-col justify-around w-full text-sm font-medium text-gray-900`}
 export const Select = (props: any) => {
     return (
         <GroupLaberStyle>Your Favorite Ocean
-            <SelectStyle>
+            <SelectStyle  onChange={e => console.log(e.target.value)}>
                 {listItem}
             </SelectStyle>
         </GroupLaberStyle>

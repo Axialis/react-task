@@ -24,7 +24,7 @@ ${tw`flex w-1/2 gap-2`}
 const listItem = hobbyList.map((el: string, index: number) => {
     return (
     <GroupStyle key={el}>
-        <input type="checkbox"/>
+        <input type="checkbox" name={el} onChange={e => console.log(e.target.checked, e.target.name)}/>
         <label key={el}>{el}</label>
     </GroupStyle>
     )

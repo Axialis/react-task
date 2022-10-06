@@ -12,7 +12,7 @@ const InputStyle = styled.form.attrs({
 
 export const Input = (props: any) => {
     return (
-        <InputStyle>
+        <InputStyle  onChange={e => console.log((e.target  as HTMLTextAreaElement).value, props.label)}>
             <label>{props.label}</label>
             <input type={props.type} placeholder={props.placeholder} />
         </InputStyle>
