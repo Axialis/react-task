@@ -3,7 +3,6 @@ import tw from 'twin.macro'
 import { ContainerProps } from "../../types/types"
 import store from "../../store";
 
-console.log(store.getState())
 const ModalStyle = styled.div`
 ${tw` fixed 
 flex 

@@ -24,7 +24,7 @@ function Main() {
         return (
             <Modal>
                 <div onClick={() => setElement('closeDialog')}>
-                    <Button title='OK' id='closeDialog' />
+                    <Button title='OK' id='closeDialog' reset='RESET_STORE'/>
                 </div>
             </Modal>
         )

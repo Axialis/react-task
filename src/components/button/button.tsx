@@ -24,10 +24,15 @@ ${tw`
 const Text = styled.span`
 ${tw`hover:text-blue-500`}
 `
-
+function clickHandler(props: any) {
+  if(props.reset === "RESET_STORE") {
+    store.dispatch({type: 'RESET_STORE'});
+  }
+  store.dispatch(pressButton(props.id))
+}
 export const Button = (props: any) => {
   return (
-    <ButtonStyle onClick={() => store.dispatch(pressButton(props.id))}>
+    <ButtonStyle onClick={() => clickHandler(props)}>
       <Text>{props.title}</Text>
     </ButtonStyle>
   )

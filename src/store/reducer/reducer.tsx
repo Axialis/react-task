@@ -1,4 +1,4 @@
-const initialState  = {
+const initialState = {
     value: '',
     phone: '',
     email: '',
@@ -25,6 +25,7 @@ export function reducer(state = initialState, action: any) {
         case "BIRTHDAY": return { ...state, birthday: action.value };
         case "OCEAN": return { ...state, ocean: action.value };
         case "HOBBY": return { ...state, hobby: action.value };
+        case "RESET_STORE": return initialState;
         default: return state;
     }
 }
