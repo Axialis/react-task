@@ -26,7 +26,6 @@ ${tw`hover:text-blue-500`}
 `
 
 export const Button = (props: any) => {
-
   return (
     <ButtonStyle onClick={() => store.dispatch(pressButton(props.id))}>
       <Text>{props.title}</Text>

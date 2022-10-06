@@ -37,9 +37,9 @@ export const PersonalInfo = (props: ContainerProps) => {
                 <Input type="text" placeholder="John" label="First name"></Input>
                 <Input type="text" placeholder="Doe" label="Last name"></Input>
                 <RadioButton type="radio" label1="Male" label2="Female" name="sex"></RadioButton>
-                <Input type="date" placeholder="Doe" label="Birthday"></Input>
-                <Select/>
-                <CheckBox></CheckBox>
+                <Input type="date" placeholder="Doe" label="Birthday" ></Input>
+                <Select />
+                <CheckBox />
             </InputPosition>
             <ButtonPosition>
                 {props.children}
