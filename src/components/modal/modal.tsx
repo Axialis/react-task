@@ -3,17 +3,21 @@ import tw from 'twin.macro'
 import { ContainerProps } from "../../types/types"
 import store from "../../store";
 
-const ModalStyle = styled.div`
+const ModalStyle = styled.div.attrs({
+    className: `bg-black bg-opacity-25`
+})`
 ${tw` fixed 
 flex 
 w-full 
 h-full 
-bg-gray-200
+// bg-transparent
 justify-center 
 items-center
 `}`
 
-const DialodStyle = styled.div`
+const DialodStyle = styled.div.attrs({
+    className: `min-h-[calc(500px)] min-w-[calc(320px)] max-w-[calc(500px)]`
+})`
 ${tw`z-10
 fixed 
 flex
@@ -21,7 +25,7 @@ flex-col
 justify-around
 items-center
 w-1/2 
-h-1/3 
+py-10
 rounded-lg
 bg-gray-50
 shadow-2xl 
