@@ -3,9 +3,10 @@ import tw from 'twin.macro'
 import jsonSchema from "../../assets/json/schema.json"
 import store from "../../store";
 import { inputHobby } from "../../store/actionCreator/action-creator";
+import { validationHobby } from "../../module/validator";
 
 const hobbyList = JSON.parse(JSON.stringify(jsonSchema)).hobby.anyOf;
-const checkboxList:string[] = [];
+let checkboxList:string[] = [];
 
 const SelectStyle = styled.div.attrs({
     className: "flex  justify-around w-full flex-wrap",
@@ -24,12 +25,14 @@ const GroupStyle = styled.div`
 ${tw`flex w-1/2 gap-2`}
 `
 function checkboxHandler(name: string, value: boolean) {
+    checkboxList = store.getState().hobby.split(' ').slice();
     if(value === true) {
         checkboxList.push(name);
     } else if (checkboxList.indexOf(name) !== -1) {
         checkboxList.splice(checkboxList.indexOf(name), 1);
     }
-        store.dispatch(inputHobby(checkboxList.join(", ")));
+        store.dispatch(inputHobby(checkboxList.join(" ")));
+        store.dispatch({ type: 'VALID_HOBBY', value: validationHobby()});
 }
 
 const listItem = hobbyList.map((el: string, index: number) => {

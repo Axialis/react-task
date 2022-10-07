@@ -8,7 +8,7 @@ ${tw` fixed
 flex 
 w-full 
 h-full 
-bg-transparent 
+bg-gray-200
 justify-center 
 items-center
 `}`

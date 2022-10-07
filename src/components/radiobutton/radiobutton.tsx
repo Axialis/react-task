@@ -2,6 +2,7 @@ import styled from "styled-components";
 import tw from 'twin.macro'
 import store from "../../store";
 import { inputSex } from "../../store/actionCreator/action-creator";
+import { validationSex } from "../../module/validator";
 
 const RadioButtonStyle = styled.form.attrs({
     className: "flex  justify-around w-full",
@@ -21,6 +22,7 @@ ${tw`flex flex-col justify-around w-full text-sm font-medium text-gray-900`}
 `
 function radiobuttonHandler(radiobutton: string) {
     store.dispatch(inputSex(radiobutton));
+    store.dispatch({ type: 'VALID_SEX', value: validationSex()});
 }
 
 export const RadioButton = (props: any) => {

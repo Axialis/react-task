@@ -64,3 +64,9 @@ export function inputHobby(value: any) {
         value: value
     };
 }
+export function setPage(value: any) {
+    return { 
+        type: "PAGE",
+        value: value
+    };
+}

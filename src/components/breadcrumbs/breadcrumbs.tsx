@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import tw from 'twin.macro'
+import store from "../../store";
+import { useState } from 'react'
 
 const BreadcrumbsStyle = styled.nav`
 ${tw`
@@ -38,17 +40,31 @@ const Svg = styled.svg.attrs({
 ${tw`fill-current w-3 h-3 mx-3`}`;
 
 export const Breadcrumbs = (props: any) => {
+
+let [isActiveSing, toggleSing] = useState('false')
+let [isActivePersonal, togglePersonal] = useState('true')
+
+store.subscribe(() => { 
+  if (store.getState().page === 'next') {
+    toggleSing('true');
+    togglePersonal('false')
+  } else {
+    toggleSing('false');
+    togglePersonal('true')
+  }
+})
+
   return (
     <BreadcrumbsStyle>
       <Ol>
         <Li>
-          <Link active='false' onClick={() => clickLink(1)}>SingUpInfo</Link>
+          <Link active={isActiveSing} onClick={() => clickLink(1)}>SingUpInfo</Link>
           <Svg>
             <path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z" />
           </Svg>
         </Li>
         <Li>
-          <Link active='true' onClick={() => clickLink(2)}>PersonalInfo</Link>
+          <Link active={isActivePersonal} onClick={() => clickLink(2)}>PersonalInfo</Link>
         </Li>
       </Ol>
     </BreadcrumbsStyle>
@@ -56,5 +72,5 @@ export const Breadcrumbs = (props: any) => {
 }
 
 function clickLink(target: number) {
-  console.log(target)
+  // console.log(target)
 }
