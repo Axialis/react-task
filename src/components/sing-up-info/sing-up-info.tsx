@@ -2,6 +2,7 @@ import styled from "styled-components";
 import tw from 'twin.macro'
 import { ContainerProps } from "../../types/types"
 import { Input } from "../../components/input/input"
+import store from "../../store";
 
 const SingUpStyle = styled.div.attrs({
     className: `min-h-[calc(70vh)] min-w-[calc(320px)]`
@@ -31,10 +32,10 @@ export const SingUpInfo = (props: ContainerProps) => {
     return (
         <SingUpStyle>
             <InputPosition>
-                <Input type={"tel"} placeholder={"+375291234567"} label={"Mobile phone"}></Input>
-                <Input type={"email"} placeholder={"john@company.by"} label={"E-mail"}></Input>
-                <Input type={"password"} placeholder={"•••••••••"} label={"Password"}></Input>
-                <Input type={"password"} placeholder={"•••••••••"} label={"Repeat Password"}></Input>
+                <Input type={"tel"} placeholder={"+375291234567"} label={"Mobile phone"} defaultValue={store.getState().phone}></Input>
+                <Input type={"email"} placeholder={"john@company.by"} label={"E-mail"}  defaultValue={store.getState().email}></Input>
+                <Input type={"password"} placeholder={"•••••••••"} label={"Password"}  defaultValue={store.getState().pass}></Input>
+                <Input type={"password"} placeholder={"•••••••••"} label={"Repeat Password"}  defaultValue={store.getState().repeatPass}></Input>
             </InputPosition>
 
             <ButtonPosition>

@@ -31,7 +31,6 @@ const InputStyle = styled.form.attrs({
 
 
 function changeHadler(value: any, label: any) {
-
     if (label === "Mobile phone") {
         store.dispatch({ type: "VALID_PHONE", value: validationPhone(value) });
         store.dispatch(inputPhoneNumber(value));
@@ -66,7 +65,7 @@ export const Input = (props: any) => {
     return (
         <InputStyle onChange={(e) => { changeHadler(((e.target as HTMLTextAreaElement).value), props.label) }}>
             <label>{props.label}</label>
-            <input type={props.type} placeholder={props.placeholder} />
+            <input type={props.type} placeholder={props.placeholder} defaultValue={props.defaultValue} />
         </InputStyle >
     )
 }

@@ -7,6 +7,7 @@ import { PersonalInfo } from "../components/personal-info/personal-info";
 import Modal from "../components/modal/modal";
 import store from "../store";
 import { setPage } from "../store/actionCreator/action-creator";
+import jsonSchema from "../assets/json/schema.json"
 
 const MainStyle = styled.main.attrs({
     className: `min-h-[calc(100vh_-_220px)]`
@@ -27,10 +28,11 @@ function Main() {
 
     function isValidData(button: string) {
         if (button === 'next') {
-            if (store.getState().valid_phone &&
-                store.getState().valid_email &&
-                store.getState().valid_pass &&
-                store.getState().valid_repeatPass) {
+            if ( 
+                JSON.parse(JSON.stringify(jsonSchema)).mobilePhone.required ? store.getState().valid_phone : true &&
+                JSON.parse(JSON.stringify(jsonSchema)).email.required ? store.getState().valid_email : true &&
+                JSON.parse(JSON.stringify(jsonSchema)).password.required ? store.getState().valid_pass : true &&
+                JSON.parse(JSON.stringify(jsonSchema)).password.required ? store.getState().valid_repeatPass :  true) {
                 store.dispatch(setPage(button));
                 setElement(button);
                 return true;
@@ -38,33 +40,32 @@ function Main() {
         }
 
         if (button === 'complete') {
-            if (store.getState().valid_firstName &&
-                store.getState().valid_lastName &&
-                store.getState().valid_sex &&
-                store.getState().valid_birthday &&
-                store.getState().valid_ocean &&
-                store.getState().valid_hobby) {
-                store.dispatch( setPage(button));
+            if (
+                JSON.parse(JSON.stringify(jsonSchema)).firstName.required ? store.getState().valid_firstName :true &&
+                JSON.parse(JSON.stringify(jsonSchema)).firstName.required ? store.getState().valid_lastName : true &&
+                JSON.parse(JSON.stringify(jsonSchema)).sex.required ? store.getState().valid_sex : true &&
+                JSON.parse(JSON.stringify(jsonSchema)).birthday.required ? store.getState().valid_birthday : true &&
+                JSON.parse(JSON.stringify(jsonSchema)).ocean.required ? store.getState().valid_ocean : true &&
+                JSON.parse(JSON.stringify(jsonSchema)).hobby.required ? store.getState().valid_hobby : true
+                ) {
+                store.dispatch(setPage(button));
                 setElement(button);
                 return true;
             }
         }
         return false;
     }
-    
-store.subscribe(() => { 
-  if (store.getState().page === '') {
-    setElement('')
-  } 
-  if (store.getState().page === 'next') {
-    setElement('next')
-  } 
-})
+
+    function setNewPage(button: string) {        
+        setElement(button);
+        store.dispatch(setPage(button));
+    }
+
 
     if (element === 'complete') {
         return (
             <Modal>
-                <div onClick={() => setElement('closeDialog')}>
+                <div onClick={() => setNewPage('closeDialog')}>
                     <Button title='OK' id='closeDialog' reset='RESET_STORE' />
                 </div>
             </Modal>
@@ -74,8 +75,8 @@ store.subscribe(() => {
         return (
             <MainStyle>
                 <SingUpInfo>
-                    <div onClick={() => isValidData('next')}>
-                        <Button title='Next' id='next' />
+                    <div onClick={() => setNewPage('')}>
+                        <Button title='Next' id='' />
                     </div>
                 </SingUpInfo>
             </MainStyle>
@@ -97,7 +98,7 @@ store.subscribe(() => {
         return (
             <MainStyle>
                 <PersonalInfo>
-                    <div onClick={() => setElement('changeSingUp')}>
+                    <div onClick={() => setNewPage('changeSingUp')}>
                         <Button title='Change SignUp' id='changeSingUp' />
                     </div>
                     <div onClick={() => isValidData('complete')}>

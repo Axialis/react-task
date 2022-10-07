@@ -1,8 +1,7 @@
 import styled from "styled-components";
 import tw from 'twin.macro'
 import store from "../../store";
-import { pressButton } from "../../store/actionCreator/action-creator";
-
+import { pressButton, setPage } from "../../store/actionCreator/action-creator";
 
 const ButtonStyle = styled.button`
 ${tw`
@@ -26,7 +25,7 @@ ${tw`hover:text-blue-500`}
 `
 function clickHandler(props: any) {
   if(props.reset === "RESET_STORE") {
-    store.dispatch({type: 'RESET_STORE'});
+    store.dispatch({type: 'RESET_STORE'});    
   }
   store.dispatch(pressButton(props.id))
 }
