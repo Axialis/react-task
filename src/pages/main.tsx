@@ -22,6 +22,7 @@ items-center
 
 
 function Main() {
+
     const [element, setElement] = useState('')
 
     function isValidData(button: string) {
@@ -51,6 +52,14 @@ function Main() {
         return false;
     }
     
+store.subscribe(() => { 
+  if (store.getState().page === '') {
+    setElement('')
+  } 
+  if (store.getState().page === 'next') {
+    setElement('next')
+  } 
+})
 
     if (element === 'complete') {
         return (

@@ -2,6 +2,7 @@ import styled from "styled-components";
 import tw from 'twin.macro'
 import store from "../../store";
 import { useState } from 'react'
+import { setPage } from "../../store/actionCreator/action-creator";
 
 const BreadcrumbsStyle = styled.nav`
 ${tw`
@@ -46,13 +47,20 @@ let [isActivePersonal, togglePersonal] = useState('true')
 
 store.subscribe(() => { 
   if (store.getState().page === 'next') {
-    toggleSing('true');
     togglePersonal('false')
   } else {
-    toggleSing('false');
     togglePersonal('true')
   }
 })
+
+function clickLink(target: number) {
+  if(target === 1) {
+    store.dispatch(setPage(''));
+  }
+  if(target === 2) {
+    store.dispatch(setPage('next'));
+  }
+}
 
   return (
     <BreadcrumbsStyle>
@@ -71,6 +79,3 @@ store.subscribe(() => {
   )
 }
 
-function clickLink(target: number) {
-  // console.log(target)
-}
