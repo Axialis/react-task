@@ -29,10 +29,10 @@ function Main() {
     function isValidData(button: string) {
         if (button === 'next') {
             if ( 
-                JSON.parse(JSON.stringify(jsonSchema)).mobilePhone.required ? store.getState().valid_phone : true &&
-                JSON.parse(JSON.stringify(jsonSchema)).email.required ? store.getState().valid_email : true &&
-                JSON.parse(JSON.stringify(jsonSchema)).password.required ? store.getState().valid_pass : true &&
-                JSON.parse(JSON.stringify(jsonSchema)).password.required ? store.getState().valid_repeatPass :  true) {
+                (JSON.parse(JSON.stringify(jsonSchema)).mobilePhone.required ? store.getState().valid_phone : true) &&
+                (JSON.parse(JSON.stringify(jsonSchema)).email.required ? store.getState().valid_email : true) &&
+                (JSON.parse(JSON.stringify(jsonSchema)).password.required ? store.getState().valid_pass : true) &&
+                (JSON.parse(JSON.stringify(jsonSchema)).password.required ? store.getState().valid_repeatPass :  true)) {
                 store.dispatch(setPage(button));
                 setElement(button);
                 return true;
@@ -41,12 +41,12 @@ function Main() {
 
         if (button === 'complete') {
             if (
-                JSON.parse(JSON.stringify(jsonSchema)).firstName.required ? store.getState().valid_firstName :true &&
-                JSON.parse(JSON.stringify(jsonSchema)).firstName.required ? store.getState().valid_lastName : true &&
-                JSON.parse(JSON.stringify(jsonSchema)).sex.required ? store.getState().valid_sex : true &&
-                JSON.parse(JSON.stringify(jsonSchema)).birthday.required ? store.getState().valid_birthday : true &&
-                JSON.parse(JSON.stringify(jsonSchema)).ocean.required ? store.getState().valid_ocean : true &&
-                JSON.parse(JSON.stringify(jsonSchema)).hobby.required ? store.getState().valid_hobby : true
+                (JSON.parse(JSON.stringify(jsonSchema)).firstName.required ? store.getState().valid_firstName :true) &&
+                (JSON.parse(JSON.stringify(jsonSchema)).firstName.required ? store.getState().valid_lastName : true) &&
+                (JSON.parse(JSON.stringify(jsonSchema)).sex.required ? store.getState().valid_sex : true) &&
+                (JSON.parse(JSON.stringify(jsonSchema)).birthday.required ? store.getState().valid_birthday : true) &&
+                (JSON.parse(JSON.stringify(jsonSchema)).ocean.required ? store.getState().valid_ocean : true) &&
+                (JSON.parse(JSON.stringify(jsonSchema)).hobby.required ? store.getState().valid_hobby : true)
                 ) {
                 store.dispatch(setPage(button));
                 setElement(button);
